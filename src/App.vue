@@ -116,6 +116,13 @@ export default {
 </script>
 
 <style>
+body {
+  background-color: #1e1e1e; /* Cool dark grey color for dark mode */
+  color: #e0e0e0; /* Light text for visibility against the dark background */
+  margin: 0;
+  padding: 0;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -123,7 +130,6 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 120px;
-  padding: 1rem;
 }
 
 footer {
@@ -131,7 +137,7 @@ footer {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: #333;
+  background-color: #0a5620;
   color: #fff;
   padding: 1rem;
   margin: 0;
@@ -159,23 +165,6 @@ a {
   text-decoration: none;
 }
 
-table {
-  width: 100%;
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-th,
-td {
-  padding: 8px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
-}
-
-.order-detail {
-  text-align: left;
-}
-
 button {
   padding: 10px;
   background-color: #005f8b;
@@ -186,72 +175,114 @@ button {
   height: 42px;
 }
 
-button:hover {
-  background-color: #005f8b;
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
-.action-button {
-  float: right;
-}
-
-.product-detail {
-  text-align: left;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 1rem;
-  margin: 2rem auto;
-}
-
-.product-form {
+.product-card {
   display: flex;
   flex-direction: column;
-  align-items: left;
-  justify-content: center;
-  margin: 2rem auto;
-  width: 50%;
-}
-
-.form-row {
-  display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 10px;
+  margin: 1rem;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.9);
 }
 
-.ai-button {
-  margin-left: 10px;
-  padding: 10px 10px;
-  border-radius: 5px;
-  border: none;
-  background-color: #007acc;
-  color: #fff;
-  cursor: pointer;
+.product-card img {
+  max-width: 100%;
+  margin-bottom: 1rem;
 }
 
-.ai-button:hover {
+.product-card a {
+  text-decoration: none;
+  color: #333;
+}
+
+.product-card h2 {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.product-card p {
+  margin-bottom: 1rem;
+}
+
+.product-controls {
+  display: flex;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.product-controls p {
+  margin-right: 20px;
+}
+
+.product-controls button:hover {
   background-color: #005f8b;
 }
 
-textarea {
-  width: 100%;
-  padding: 5px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
+.product-price {
+  font-weight: bold;
+  font-size: 1.2rem;
 }
 
-label {
-  text-align: right;
+.quantity-input {
+  width: 50px;
+  height: 30px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px;
   margin-right: 10px;
-  width: 100px;
+}
+
+.shopping-cart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.shopping-cart h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.shopping-cart-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.shopping-cart-table th,
+.shopping-cart-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.shopping-cart-table th {
   font-weight: bold;
 }
 
-input {
-  width: 100%;
-  padding: 5px;
+.shopping-cart-table td img {
+  display: block;
+  margin: 0 auto;
+}
+
+.checkout-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #007acc;
+  color: #fff;
+  border: none;
   border-radius: 5px;
-  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.checkout-button:hover {
+  background-color: #005f8b;
 }
 </style>
